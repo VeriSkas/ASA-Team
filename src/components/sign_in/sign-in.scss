@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.signIn__wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(33deg, rgba(2,0,36,1) 0%, rgba(54,54,250,0.7987570028011204) 0%, rgba(19,246,160,0.9164040616246498) 51%, rgba(0,212,255,1) 100%);
+    &_tagline {
+        font-family: 'Cinzel Decorative', cursive;
+        text-shadow: 3px 2px 2px #0c0e0cd1;
+        .tagline1 {
+            font-size: 25px;
+            margin: 10px 5px;
+        }
+        .tagline2 {
+            font-size: 40px;
+            margin: 0px 10px;
+        }
+        .tagline3 {
+            font-size: 70px;
+            margin: 0px 25px;
+        }
+    }
+    &_auth {
+        width: 30%;
+        background: #abfddf;
+        padding: 20px;
+        border-radius: 3px;
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.6);
+        -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.6);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.6);
+        &-form {
+            .inputEmail, .inputPassword {
+                border-bottom: 1px solid;
+            }
+            input {
+                width: 100%;
+                border: 0;
+                background-color: #abfddf;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 17px;
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+            .signUp-text {
+                margin: 20px auto;
+                a {
+                    text-decoration: none;
+                    color: #2834d6;
+
+                }
+            }
+            .submitBtn {
+                display: flex;
+                .auth-form-Btn {
+                    background: #41b0cf;
+                    width: 50%;
+                    height: 30px;
+                    font-size: 20px;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: bold;
+                }
+            }
+
+        }
+    }
+}

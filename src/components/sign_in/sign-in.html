@@ -7,22 +7,26 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="signIn__wrapper">
-            <div class="signIn__wrapper_tagline">
+        <div class="components__wrapper">
+            <div class="components__wrapper_tagline">
                 <p class="tagline1">Create It</p>
                 <p class="tagline2">Write It</p>
                 <p class="tagline3">Do IT</p>
             </div>
-            <div class="signIn__wrapper_auth">
-                <div class="signIn__wrapper_auth-logo"></div>
-                <h1 class="signIn__wrapper_auth-title">Sign In</h1>
-                <form class="signIn__wrapper_auth-form">
-                    <div class="inputEmail">
+            <div class="components__wrapper_auth">
+                <form class="components__wrapper_auth-form">
+                    <h1 class="components__wrapper_auth-title">Sign In</h1>
+                    <div class="inputContainer">
                         <input type='email' class="inputEmail_input" placeholder="input your email...">
+                        <div class="dividing"></div>
+                        <p id="inputErrorEmail" class="inputError"></p>
                     </div>
-                    <div class="inputPassword">
+                    <div class="inputContainer">
                         <input type="password" class="inputPassword_input" placeholder="input your password...">
+                        <div class="dividing"></div>
+                        <p id="inputErrorPassword" class="inputError"></p>
                     </div>
+
                     <div class="signUp-text">
                         <p>Don't have an account? <a href="../sign_up/sign-up.html">Create it!</a> </p>
                     </div>

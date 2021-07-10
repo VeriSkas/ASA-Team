@@ -9,3 +9,5 @@ export const firebaseConfig = {
     messagingSenderId: '260382430391',
     appId: '1:260382430391:web:1e0e5b531d7828d97a6932'
 };
+
+export const authURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseConfig.apiKey}`;

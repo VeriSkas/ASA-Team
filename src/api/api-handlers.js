@@ -1,6 +1,8 @@
 require('firebase/auth');
 import firebase from 'firebase/app';
 import { databaseURL, firebaseConfig, authURL } from './api-config';
+import { setToken } from '../shared/ls-service';
+import { routes } from '../shared/constants/routes';
 
 const headers = {
     'Content-Type': 'application/json'
@@ -28,14 +30,13 @@ export const createTodo = post => {
         }
     )
         .then( response => response.json())
-        .then( result => console.log(result))
 };
 
 export const getTodos = () => {
     return fetch(
         `${databaseURL}/todos.json`,
         {
-            method: 'GET',  //get запрос идет по умолчанию, его можно не прописывать
+            method: 'GET',
             headers,
         }
     )
@@ -63,6 +64,13 @@ export const signIn = (email, password) => {
         })
     })
         .then( response => response.json())
+        .then( result => {
+            const token = result.idToken;
+            if (token) {
+                setToken(token);
+                window.location.href = routes.home;
+            }
+        })
         .catch( err => console.log(err));
 };
 

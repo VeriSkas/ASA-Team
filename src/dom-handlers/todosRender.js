@@ -5,7 +5,6 @@ import { getTodos, createTodo } from '../api/api-handlers';
 export const renderTodos = () => {
     getTodos()
         .then( todos => {
-            console.log(todos);
             const todosContainer = document.querySelector('.content__todo_todosMain');
             todosContainer.innerHTML = null;
             todos.forEach( item => {

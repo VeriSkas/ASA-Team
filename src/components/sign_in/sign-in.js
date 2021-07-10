@@ -1,10 +1,8 @@
 import { signIn } from '../../api/api-handlers';
-import { setToken } from 'f:/2level/new/25.06/src/shared/ls-service';
-import { routes } from '../../shared/constants/routes';
 import { checkValidPassword, checkValidEmail } from '../../shared/validators';
 
 export const signInHandler = () => {
-    const signIn_form = document.querySelector('.signIn__wrapper_auth-form');
+    const signIn_form = document.querySelector('.components__wrapper_auth-form');
     const authEmail = document.querySelector('.inputEmail_input');
     const authPassword = document.querySelector('.inputPassword_input');
     const inputErrorEmailText = document.querySelector('#inputErrorEmail');
@@ -23,18 +21,10 @@ export const signInHandler = () => {
     authBtn.setAttribute('disabled', true);
 
     signIn_form.addEventListener('submit', event => {
-        event.preventDefault();
         const email = authEmail.value;
         const password = authPassword.value;
-        signIn(email, password)
-            .then( result => {
-                const token = result.idToken;
-                if (token) {
-                    setToken(token);
-                    window.location.href = routes.home;
-                }
-            });
-
+        event.preventDefault();
+        signIn(email, password);
     });
 
     const checkFormValid = () => {

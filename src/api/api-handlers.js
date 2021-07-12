@@ -74,7 +74,7 @@ export const signIn = (email, password) => {
         .catch( err => console.log(err));
 };
 
-export const signUp = async (name, surname, birth, gender, email, password) => {
+export const signUp = async (name, email, password) => {
     await firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
@@ -85,9 +85,6 @@ export const signUp = async (name, surname, birth, gender, email, password) => {
         headers,
         body: JSON.stringify({
             name,
-            surname,
-            birth,
-            gender,
             email,
         })
     })

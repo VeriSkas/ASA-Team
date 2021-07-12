@@ -86,4 +86,5 @@ export const signUpHandler = () => {
         checkFormValid();
     };
 
+    console.log('test');
 };
